@@ -1,0 +1,9 @@
+app:
+  image: base-image
+  container_name: container-name
+  env_file:
+    - dev.env # In case we want to pass environment variables we can use .env file or just list here
+  net : "local-dev" # local network setup in local-setup script to easily communicate between containers
+  volumes:
+    - .:/app
+  command: bash cmd.sh # runs cmd.sh last to run any repo specific commands and start bash in the container
